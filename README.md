@@ -13,7 +13,7 @@ O repositório está dividido logicamente entre a aplicação alvo e os vetores 
 ```text
 TCC-WAF-BYPASS/
 ├── app-vulneravel/
-│   ├── index.php
+│   ├── index.php                    # Página principal da aplicação
 │   └── sqli-login.php               # Aplicação PHP intencionalmente vulnerável a SQLi
 └── scripts-ataque/
     ├── alteracao_logica/            # Testes de linha de base (Baseline)

