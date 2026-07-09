@@ -3,7 +3,7 @@ import urllib.parse
 
 # Configuração
 # Certifique-se de que este DNS é o do seu ALB atual
-url = "http://localhost/sqli-login.php" # colocar aqui a url de destino da aplicação, 
+url = "http://alb-sg-243851779.us-east-1.elb.amazonaws.com/use-case-sqli-login.php" # colocar aqui a url de destino da aplicação, 
 # no meu caso tenho o ambiente "localhost" e também o destino com o ALB da AWS
 # "http://alb-sg-243851779.us-east-1.elb.amazonaws.com/use-case-sqli-login.php"
 
